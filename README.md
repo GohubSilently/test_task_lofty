@@ -63,8 +63,8 @@ API_KEY = your_api_key
 uv run weather.py Mocsow
 ```
 
-[!Photo](https://github.com/GohubSilently/test_task_lofty/blob/main/Снимок%20экрана%202026-03-31%20в%2022.33.34.png)
+![Photo](https://github.com/GohubSilently/test_task_lofty/blob/main/Снимок%20экрана%202026-03-31%20в%2022.33.34.png)
 
-[!Photo](https://github.com/GohubSilently/test_task_lofty/blob/main/Снимок%20экрана%202026-03-31%20в%2022.33.55.png)
+![Photo](https://github.com/GohubSilently/test_task_lofty/blob/main/Снимок%20экрана%202026-03-31%20в%2022.33.55.png)
 
 ---
