@@ -24,14 +24,14 @@ from utils import get_response
 MAIN_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
 
-def pretty_output(results):
+def output_weather(results):
     table = PrettyTable()
     table.field_names = results[0]
     table.add_rows(results[1:])
     print(table)
 
 
-def output_weather(response):
+def parse_information(response):
     data = response.json()
     name = data['name']
     weather_condition = data['weather'][0]['main']
@@ -53,7 +53,7 @@ def main():
     for city in args.city:
         try:
             response = get_response(session, MAIN_URL, city)
-            result = output_weather(response)
+            result = parse_information(response)
             if result is not None:
                 results.append(result)
         except CityNotFoundError as error:
@@ -66,7 +66,7 @@ def main():
             logging.warning(error)
             return
     if len(results) != 1:
-        pretty_output(results)
+        output_weather(results)
     else:
         logging.info(NOT_FOUND_DATA)
 

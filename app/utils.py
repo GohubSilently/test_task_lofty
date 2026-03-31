@@ -38,15 +38,15 @@ def get_response(session, url, city):
             REQUEST_ERROR.format(url=url, error=error)
         )
     if response.status_code == 400000:
-        raise SubscriptionError(f'Проверьте подписку!')
+        raise SubscriptionError('Проверьте подписку!')
     if response.status_code == 401:
-        raise InvalidAPIKeyError(f'Проблема с API ключом!')
+        raise InvalidAPIKeyError('Проблема с API ключом!')
     if response.status_code == 404:
         raise CityNotFoundError(f'Город {city} не найден!')
     if response.status_code == 429:
-        raise WeatherAPIUnavailable(f'Слишком много запросов!')
+        raise WeatherAPIUnavailable('Слишком много запросов!')
     if response.status_code >= 500:
-        raise WeatherAPIUnavailable(f'Обратитесь в поддержку OpenWeather!')
+        raise WeatherAPIUnavailable('Обратитесь в поддержку OpenWeather!')
     if response.status_code == 200:
         return response
     else:
